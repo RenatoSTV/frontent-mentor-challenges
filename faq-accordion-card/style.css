@@ -1,0 +1,209 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+
+  background-image: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  width: 60%;
+  display: flex;
+  border-radius: 30px;
+  background-color: #fff;
+}
+
+.card .bgImages {
+  min-width: 300px;
+  position: relative;
+  display: flex;
+  background-image: url(assets/bg-pattern-desktop.svg),
+    url(assets/illustration-woman-online-desktop.svg);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 120%;
+}
+
+.card .bgImages img {
+  object-fit: contain;
+  position: relative;
+}
+
+.card .bgImages .box-desktop {
+  width: 50%;
+  top: 8%;
+  left: -30%;
+}
+
+.card .bgImages .woman-mobile {
+  display: none;
+}
+
+.card .faq {
+  width: 80%;
+  min-width: 200px;
+  height: 500px;
+  margin: 50px;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.card .faq h1 {
+  font-size: 38px;
+  margin-top: 20px;
+}
+
+.card .faq .sections {
+  width: 100%;
+  margin: 30px 0;
+}
+
+.card .faq .sections section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  margin-right: 50px;
+  padding: 20px 0;
+  border-bottom: 2px solid hsl(240, 5%, 91%);
+}
+
+.card .faq .sections section .question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card .faq .sections section .question h3 {
+  color: hsl(240, 6%, 50%);
+
+  font-weight: 400;
+}
+
+.card .faq .sections section .question h3:hover {
+  color: hsl(14, 88%, 65%);
+
+  cursor: pointer;
+}
+
+.card .faq .sections section .question h3:focus-within {
+  color: hsl(238, 29%, 16%);
+}
+
+.card .faq .sections section .question h3.active {
+  font-weight: 700;
+  color: hsl(238, 29%, 16%);
+}
+
+.card .faq .sections section .question span {
+  background: url("assets/icon-arrow-down.svg") no-repeat;
+  background-size: 15px;
+  background-position: center;
+
+  width: 20px;
+  height: 22px;
+
+  margin: 0 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.card .faq .sections section .answer p {
+  color: hsl(240, 6%, 50%);
+
+  font-size: 16px;
+  font-weight: 400;
+
+  display: flex;
+  visibility: hidden;
+  height: 0;
+  transition: 0.5s ease-in-out;
+  opacity: 0;
+}
+
+.card .faq .sections section .answer p.active {
+  visibility: visible;
+  height: 100%;
+  margin-top: 10px;
+  transition: 0.5s ease-in-out;
+  opacity: 1;
+}
+
+@media (max-width: 850px) {
+  .main {
+    overflow: auto;
+  }
+
+  .card {
+    margin-top: 100px;
+    flex-direction: column;
+  }
+
+  .card .bgImages {
+    min-width: 100%;
+    min-height: 150px;
+    position: relative;
+    display: flex;
+    background-image: url(assets/bg-pattern-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 70%;
+  }
+
+  .card .bgImages .box-desktop {
+    display: none;
+  }
+
+  .card .bgImages .woman-mobile {
+    display: flex;
+    position: absolute;
+    width: 70%;
+    top: -60%;
+    left: 10%;
+  }
+
+  .card .faq {
+    width: 100%;
+    height: 80%;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 0;
+    margin-bottom: 20px;
+    padding: 0 20px;
+  }
+
+  .card .faq .sections section {
+    flex-direction: column;
+    margin-right: 0;
+  }
+
+  .card .faq .sections section .question h3 {
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .card .faq .sections section .answer p {
+    font-size: 14px;
+    font-weight: 400;
+  }
+}
